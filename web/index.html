@@ -19,8 +19,9 @@
     </style>
   </head>
   <body>
+    <main></main>
     <script type="module">
-      fetch("http://rest-api-deploy-0.vercel.app/movies")
+      fetch("http://rest-api-deploy-0.vercel.app/")
         .then((res) => res.json())
         .then((movies) => {
           const html = movies
