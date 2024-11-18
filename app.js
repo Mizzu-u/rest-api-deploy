@@ -16,11 +16,11 @@ app.disable("x-powered-by"); //! Deshabilitar el header X-Powered-By: Express
 
 // CORS PRE-Flight
 // OPTIONS
+app.use(express.static(path.join(__dirname, "web")));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
-
 //? Todos los recursos que sean MOVIES se identifica con /movies
 app.get("/movies", (req, res) => {
   const { genre } = req.query; //?--> En la req podemos haceder a la propiedad query
