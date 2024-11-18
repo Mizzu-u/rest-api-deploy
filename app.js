@@ -1,6 +1,7 @@
 const express = require("express"); //* require -> commonJS
 const crypto = require("node:crypto");
 const cors = require("cors");
+const path = require("path");
 
 const movies = require("./movies.json");
 const { validateMovie, validatePartialMovie } = require("./schemas/movies");
