@@ -21,7 +21,7 @@
   <body>
     <main></main>
     <script type="module">
-      fetch("http://rest-api-deploy-olive.vercel.app/")
+      fetch("http://rest-api-deploy-olive.vercel.app/movies")
         .then((res) => res.json())
         .then((movies) => {
           const html = movies
