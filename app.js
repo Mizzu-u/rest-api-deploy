@@ -8,7 +8,7 @@ const { validateMovie, validatePartialMovie } = require("./schemas/movies");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "https://rest-api-deploy-olive.vercel.app" }));
 app.disable("x-powered-by"); //! Deshabilitar el header X-Powered-By: Express
 
 //* métodos normales: GET/HEAD/POST
