@@ -18,7 +18,7 @@
       }
     </style>
     <script type="module">
-      fetch("http://rest-api-deploy-0.vercel.app")
+      fetch("http://rest-api-deploy-0.vercel.app/movie")
         .then((res) => res.json())
         .then((movies) => {
           const html = movies
@@ -42,7 +42,7 @@
               const article = e.target.closest("article");
               const id = article.dataset.id;
 
-              fetch(`"http://rest-api-deploy-0.vercel.app"${id}`, {
+              fetch(`"http://rest-api-deploy-0.vercel.app/movie"${id}`, {
                 method: "DELETE",
               }).then((res) => {
                 if (res.ok) {
