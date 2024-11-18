@@ -4,17 +4,21 @@
     {
       "src": "app.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
     }
   ],
 
   "routes": [
     {
-      "src": "/",
+      "src": "/movies",
       "dest": "app.js"
     },
     {
-      "src": "/(.*)",
-      "dest": "app.js"
+      "src": "/",
+      "dest": "/index.html"
     }
   ]
 }
