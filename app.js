@@ -7,23 +7,7 @@ const { validateMovie, validatePartialMovie } = require("./schemas/movies");
 
 const app = express();
 app.use(express.json());
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      const ACCEPTED_ORIGINS = ["http://localhost:8080", "http://localhost:1234", "https://movies.com", "https://midu.dev"];
-      //?--> El navegador nunca envia la cabezera de origin cuando es del mismo origin de donde se envia
-      if (ACCEPTED_ORIGINS.includes(origin)) {
-        return callback(null, true);
-      }
-
-      if (!origin) {
-        return callback(null, true);
-      }
-
-      return callback(new Error("Not allowed by CORS"));
-    },
-  })
-);
+app.use(cors());
 app.disable("x-powered-by"); //! Deshabilitar el header X-Powered-By: Express
 
 //* métodos normales: GET/HEAD/POST
@@ -109,7 +93,7 @@ app.patch("/movies/:id", (req, res) => {
   return res.json(updateMovie);
 });
 
-const PORT = process.env.PORT ?? 1234;
+const PORT = process.env.PORT ?? 3000;
 
 app.listen(PORT, () => {
   console.log(`server listening on port http://localhost:${PORT}`);
