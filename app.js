@@ -17,7 +17,7 @@ app.disable("x-powered-by"); //! Deshabilitar el header X-Powered-By: Express
 // OPTIONS
 
 app.get("/", (req, res) => {
-  res.json(movies); // Devuelve el catálogo de películas directamente
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 //? Todos los recursos que sean MOVIES se identifica con /movies
